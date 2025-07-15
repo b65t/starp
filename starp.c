@@ -19,6 +19,10 @@ void get_language(const char* language, const char* project_name) {
 		char copy_file[50];
                 sprintf(copy_file, "cp /home/islam/projects/starp/templates/main.go ./%s/main.go", project_name);
                 system(copy_file);
+	} else if (strcmp(language, "java") == 0) {
+		char copy_file[50];
+                sprintf(copy_file, "cp /home/islam/projects/starp/templates/main.java ./%s/main.java", project_name);
+                system(copy_file);
 	}
 }
 
@@ -51,7 +55,8 @@ int main() {
 	    (strcmp(language, "c++") == 0) ||
 	    (strcmp(language, "html") == 0) ||
 	    (strcmp(language, "web") == 0 ) ||
-	    (strcmp(language, "go") == 0 )) {
+	    (strcmp(language, "go") == 0 ) ||
+	    (strcmp(language, "java") == 0)) {
 		setup(project_name, language);
 	} else {
 		printf("pls enter a language");
