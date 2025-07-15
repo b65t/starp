@@ -1,0 +1,10 @@
+starp
+=====
+
+still on work
+
+to install:
+  doas/sudo make install
+
+to uninstall:
+  doas/sudo make uninstall
