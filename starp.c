@@ -2,38 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void get_language(const char* language, const char* project_name) {
-	if (strcmp(language, "c") == 0) {
-		char copy_file[50];
-		sprintf(copy_file, "cp /home/islam/projects/starp/templates/main.c ./%s/main.c", project_name);
-		system(copy_file);
-	} else if ((strcmp(language, "cpp") == 0) || (strcmp(language, "c++") == 0)) {
-		char copy_file[50];
-		sprintf(copy_file, "cp /home/islam/projects/starp/templates/main.cpp ./%s/main.cpp", project_name);
-		system(copy_file);
-	} else if ((strcmp(language, "html") == 0) || (strcmp(language, "web")) == 0) {
-		char copy_file[50];
-		sprintf(copy_file, "cp /home/islam/projects/starp/templates/index.html ./%s/index.html || cp /home/islam/projects/starp/templates/style.css", project_name);
-		system(copy_file);
-	} else if (strcmp(language, "go") == 0) {
-		char copy_file[50];
-                sprintf(copy_file, "cp /home/islam/projects/starp/templates/main.go ./%s/main.go", project_name);
-                system(copy_file);
-	} else if (strcmp(language, "java") == 0) {
-		char copy_file[50];
-                sprintf(copy_file, "cp /home/islam/projects/starp/templates/main.java ./%s/main.java", project_name);
-                system(copy_file);
-	}
-}
-
-void setup(const char* project_name, const char* language) {
-	char make_folder[50];
-	char make_files[50];
-	sprintf(make_folder, "mkdir ./%s", project_name);
-	system(make_folder);
-	get_language(language, project_name);
-}
-
 int main() {
 	char project_name[25];
 	char language[10];
@@ -43,7 +11,7 @@ int main() {
 
 	scanf("%9s", language);
 
-	printf("setting %s as language", language);
+	printf("setting %s as language\n", language);
 	puts("what the project name ?");
 
 	scanf("%24s", project_name);
@@ -54,10 +22,21 @@ int main() {
 	    (strcmp(language, "cpp") == 0) ||
 	    (strcmp(language, "c++") == 0) ||
 	    (strcmp(language, "html") == 0) ||
-	    (strcmp(language, "web") == 0 ) ||
 	    (strcmp(language, "go") == 0 ) ||
 	    (strcmp(language, "java") == 0)) {
 		setup(project_name, language);
+	} else if (strcmp(language, "web") == 0) {
+		puts("settings up a web project");
+		char style[10]
+
+		puts("please enter styling framework");
+
+		scanf("%9s", style);
+
+		if (strcmp(stlye, "scss") = 0) {
+			puts("style.scss");
+			web_setup(project_name, style);
+		}
 	} else {
 		printf("pls enter a language");
 	}
